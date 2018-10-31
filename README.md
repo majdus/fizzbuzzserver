@@ -14,7 +14,7 @@ all multiples of int1 are replaced by string1,
 all multiples of int2 are replaced by string2,
 all multiples of int1 and int2 are replaced by string1string2
 
-##Run on localhost
+**Run on localhost
 ###Get and install dependencies
     go get -d -v
     go install -v
@@ -23,14 +23,14 @@ all multiples of int1 and int2 are replaced by string1string2
 ###Run
     $GOBIN/fizzbuzzserver
 
-##Run on docker
+**Run on docker
 ###Build image
     docker build -t fizzbuzz .
 ###Run container
     docker run --rm --publish 8000:8000 -t -i fizzbuzz
 
-##Try it
+**Try it
 [local deployment with int1 = 3, int2 = 50, limit = 20, string1 = "fizz", string2 = "buzz"](http://localhost:8000/3/5/20/fizz/buzz)
 
-##Try it on now.sh running server
+**Try it on now.sh running server
 [Docker deployed server](https://fizzbuzzserver-ngqfzjhpxh.now.sh/int1/3/int2/5/limit/20/string1/fizz/string2/buzz)
