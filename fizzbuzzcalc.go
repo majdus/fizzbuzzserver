@@ -21,23 +21,26 @@ func GetFizzBuzzString(fizz int, buzz int, limit int, fizzString string, buzzStr
 
 	fizzBuzzString := fizzString + buzzString
 
+	multFizz := fizz
+	multBuzz := buzz
+	fizzBuzz := fizz * buzz
+	multFizzBuzz := fizzBuzz
 	for i := 1; i <= limit; i++  {
-		if isMultiple(i, fizz) {
-			if isMultiple(i, buzz) {
-				result = append(result, fizzBuzzString)
-			}else {
-				result = append(result, fizzString)
-			}
-		} else if isMultiple(i, buzz) {
+		if i == multFizzBuzz {
+			result = append(result, fizzBuzzString)
+			multFizzBuzz = multFizzBuzz + fizzBuzz
+			multFizz = multFizz + fizz
+			multBuzz = multBuzz + buzz
+		} else if i == multBuzz {
 			result = append(result, buzzString)
+			multBuzz = multBuzz + buzz
+		} else if i == multFizz {
+			result = append(result, fizzString)
+			multFizz = multFizz + fizz
 		} else {
 			result = append(result, strconv.Itoa(i))
 		}
 	}
 
 	return &result, nil
-}
-
-func isMultiple(val int, base int) (bool) {
-	return !(base == 0 || val % base != 0)
 }
