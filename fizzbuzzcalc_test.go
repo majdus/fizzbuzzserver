@@ -85,3 +85,12 @@ func TestGetFizzBuzzBuzz0(t *testing.T)  {
 	}
 }
 
+func TestGetFizzBuzzExceedLimit(t *testing.T)  {
+	_, err := GetFizzBuzzString(3, 5, 100000000, "fizz", "buzz")
+
+	if err == nil {
+		t.Errorf("FizzBuzzString was incorrect, got: %s, want: %s", "nil", LimitExceededError )
+	} else if err.Error() != LimitExceededError {
+		t.Errorf("FizzBuzzString was incorrect, got: %s, want: %s", err.Error(), LimitExceededError )
+	}
+}

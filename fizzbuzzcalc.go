@@ -7,9 +7,14 @@ import (
 
 var FizzNullError = "fizz value can not be 0"
 var BuzzNullError = "buzz value can not be 0"
+var LimitExceededError = "limit value can not exceed 10000000"
 
 func GetFizzBuzzString(fizz int, buzz int, limit int, fizzString string, buzzString string) (*[]string, error){
 	var result []string
+
+	if limit > 10000000 {
+		return &result, errors.New(LimitExceededError)
+	}
 
 	if fizz == 0 {
 		return &result, errors.New(FizzNullError)
