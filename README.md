@@ -33,4 +33,4 @@ all multiples of int1 and int2 are replaced by string1string2
 [local deployment with int1 = 3, int2 = 50, limit = 20, string1 = "fizz", string2 = "buzz"](http://localhost:8000/3/5/20/fizz/buzz)
 
 ## Try it on now.sh running server
-[Docker deployed server](https://fizzbuzzserver-ngqfzjhpxh.now.sh/int1/3/int2/5/limit/20/string1/fizz/string2/buzz)
+[Docker deployed server](https://fizzbuzzserver-eaqrludlsn.now.sh/int1/3/int2/5/limit/20/string1/fizz/string2/buzz)
